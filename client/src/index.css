@@ -14,5 +14,20 @@ body {
   /* font-family: Cousine; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #041b15;
+  /* background-color: #041b15; */
+  background-image: linear-gradient(to right bottom, #041b15, #093d30);
+  overflow-x: hidden;
+}
+
+#modal {
+  animation: flyin 0.2s ease-out;
+}
+
+@keyframes flyin {
+  0% {
+    transform: translateY(200%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }

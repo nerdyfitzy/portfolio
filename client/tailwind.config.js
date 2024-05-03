@@ -9,6 +9,7 @@ module.exports = {
         periwinkle: "#BEB7DF",
         "light-green": "#7FD1B9",
         thistle: "#D3BCCC",
+        "hooker-green": "#5A7D7C",
       },
       fontFamily: {
         sans: "Cousine",
