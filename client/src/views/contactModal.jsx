@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import submitData from "../helpers/submitData";
+import toast from "react-hot-toast";
 
 const darken = { background: "rgba(0, 0, 0, 0.6)" };
 const back = {
@@ -10,7 +11,11 @@ function ContactModal({ shown, handleClose }) {
   const email = useRef("");
   const message = useRef("");
   const [error, changeError] = useState("");
-  if (!shown) return null;
+  if (!shown) {
+    email.current = "";
+    message.current = "";
+    return null;
+  }
 
   function handleClick(e) {
     if (e.target.getAttribute("id") === "modalBackground") handleClose();
@@ -18,11 +23,18 @@ function ContactModal({ shown, handleClose }) {
 
   async function submit(e) {
     e.preventDefault();
-    if (email.current == null || message.current == null) {
+    console.log(email.current, message.current);
+    if (email.current === "" || message.current === "") {
       changeError("Please do not leave fields blank");
     } else {
-      const valid = await submitData(email.current, message.current);
-      if (valid) handleClose();
+      const res = await submitData(email.current, message.current);
+      if (res.valid) {
+        handleClose();
+        toast.success("Sent Message!");
+      } else {
+        handleClose();
+        toast.error(res.message);
+      }
     }
   }
 
@@ -64,7 +76,7 @@ function ContactModal({ shown, handleClose }) {
             >
               Submit
             </button>
-            <span className='text-red'>{error}</span>
+            <span className='text-red-500 mt-5'>{error}</span>
           </form>
         </div>
       </div>

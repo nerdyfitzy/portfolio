@@ -8,10 +8,15 @@ const submitData = async (email, message) => {
       email,
       message,
     });
-    if (res.status === 201) return true;
+    if (res.status === 201) return { valid: true, message: "" };
+    else if (res.status === 429)
+      return { valid: false, message: res.data.message };
+    else return { valid: false, message: `Error ${res.status}` };
   } catch (e) {
     console.error(e);
-    return false;
+    if (e.response.status === 429)
+      return { valid: false, message: e.response.data };
+    else return { valid: false, message: "Internal Server Error" };
   }
 };
 

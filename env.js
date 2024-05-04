@@ -1,3 +1,5 @@
 import "dotenv/config";
 
-export const { port, environment } = process.env;
+console.log(process.env.environment);
+
+export const { port, environment, email, password, kayleeemail } = process.env;
