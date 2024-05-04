@@ -2,6 +2,7 @@ import express, { json } from "express";
 import cors from "cors";
 import { port, environment } from "../env.js";
 import router from "./routes/routes.js";
+import { fileURLToPath } from "url";
 
 const app = express();
 app.use(cors());
