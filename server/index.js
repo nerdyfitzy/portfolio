@@ -3,6 +3,7 @@ import cors from "cors";
 import { port, environment } from "../env.js";
 import router from "./routes/routes.js";
 import { fileURLToPath } from "url";
+import path from "path";
 
 const app = express();
 app.use(cors());
