@@ -1,6 +1,6 @@
 import express, { json } from "express";
 import cors from "cors";
-import { port, environment } from "../env.js";
+import { PORT, environment } from "../env.js";
 import router from "./routes/routes.js";
 import { fileURLToPath } from "url";
 import path from "path";
@@ -17,4 +17,4 @@ if (environment == "production") {
 
 app.use("/", router);
 
-app.listen(port, () => console.log("listening on", port));
+app.listen(PORT, () => console.log("listening on", PORT));
