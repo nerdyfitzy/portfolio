@@ -4,7 +4,7 @@ const submitData = async (email, message) => {
   if (email == null || message == null)
     return Error("Do not leave fields blank");
   try {
-    const res = await axios.post("http://localhost:7777/contact", {
+    const res = await axios.post("/contact", {
       email,
       message,
     });
