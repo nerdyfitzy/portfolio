@@ -7,9 +7,9 @@ const names = {
   "Contact Me": "#contactme",
 };
 
-function Link({ name }) {
+function Link({ name, onClick }) {
   return (
-    <li className=''>
+    <li className='' onClick={onClick}>
       <a
         href={names[name]}
         className='mr-6 hover:underline hover:text-dark-blue'

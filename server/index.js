@@ -1,9 +1,10 @@
-import express from "express";
+import express, { json } from "express";
 import cors from "cors";
 import { port, environment } from "../env.js";
 
 const app = express();
 app.use(cors());
+app.use(json());
 
 if (environment == "production") {
   const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
@@ -15,5 +16,14 @@ if (environment == "production") {
 }
 
 app.get("/");
+
+app.post("/contact", (req, res) => {
+  console.log(req.body);
+  const { email, message } = req.body;
+  console.log(email, message);
+
+  res.status(201);
+  res.send({ email, message });
+});
 
 app.listen(port, () => console.log("listening on", port));

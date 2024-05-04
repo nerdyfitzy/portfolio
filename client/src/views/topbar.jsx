@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "../components/link";
 import Github from "../images/github-mark-white.png";
 import Email from "../images/gmail.svg";
 import Tooltip from "../components/Tooltip";
+import ContactModal from "./contactModal";
 
 const copyEmail = () => {
   const addr = "fitzpatrickkayle9@gmail.com";
@@ -10,6 +11,7 @@ const copyEmail = () => {
 };
 
 function Topbar() {
+  const [shown, changeVis] = useState(false);
   return (
     <>
       <header className='bg-dark-green sticky top-0 z-10 w-screen h-20 border-b border-b-1 px-8 flex flex-row items-center justify-between text-white'>
@@ -17,7 +19,13 @@ function Topbar() {
           <Link name='Home' />
           <Link name='Projects' />
           <Link name='Skills' />
-          <Link name='Contact Me' />
+          <Link
+            name='Contact Me'
+            onClick={() => {
+              changeVis(!shown);
+            }}
+          />
+          <ContactModal shown={shown} handleClose={() => changeVis(false)} />
           {/* <Link name='Technologies and Frameworks' /> */}
         </ul>
         <div className='flex flex-row items-center gap-2'>
