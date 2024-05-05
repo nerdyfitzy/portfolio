@@ -18,6 +18,6 @@ if (environment == "production") {
   });
 }
 
-app.use("/", router);
+app.use("/v1", router);
 
 app.listen(PORT, () => console.log("listening on", PORT));
