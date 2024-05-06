@@ -58,7 +58,7 @@ function Project({ name, description, link, builtWith }) {
             />
           ))}
         </div>
-        <div>
+        <div className='p-2 active:bg-gray-500 hover:bg-gray-400 rounded-lg min-w-min min-h-min'>
           <a href={link} target='_blank' rel='noreferrer'>
             <img src={Github} alt='Github Logo' width={30} height={30} />
           </a>
