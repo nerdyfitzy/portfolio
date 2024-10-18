@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import purpl from "../images/purpl.png";
 import anon from "../images/anonmessager.png";
 import purplold from "../images/purpl 1.0.png";
+import dfox from "../images/druggedfoxd.png";
 
 import js from "../images/js.svg";
 import react from "../images/react.svg";
@@ -11,11 +12,14 @@ import css from "../images/css.svg";
 import jquery from "../images/jquery.svg";
 import mysql from "../images/mysql.svg";
 import Github from "../images/github-mark-white.png";
+import ts from "../images/ts.svg";
+import nextjs from "../images/nextjs.svg";
 
 const imgMap = {
   purpl,
   "Anonymous Messager": anon,
   "purpl (1.0)": purplold,
+  Druggedfoxd: dfox,
 };
 
 const imgs = [
@@ -26,12 +30,12 @@ const imgs = [
   { name: "css", svg: css },
   { name: "jquery", svg: jquery },
   { name: "mysql", svg: mysql },
+  { name: "ts", svg: ts },
+  { name: "nextjs", svg: nextjs },
 ];
 
 function Project({ name, description, link, builtWith }) {
-  const [tech, setTech] = useState(
-    imgs.filter((img) => builtWith.includes(img.name))
-  );
+  const [tech] = useState(imgs.filter((img) => builtWith.includes(img.name)));
   return (
     <>
       <div className='flex w-96 p-4 drop-shadow-2xl bg-hooker-green gap-3 flex-col rounded-lg justify-between items-center'>

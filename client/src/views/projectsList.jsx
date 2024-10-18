@@ -10,18 +10,11 @@ const projects = [
     builtWith: ["react", "js", "tailwind"],
   },
   {
-    name: "purpl (1.0)",
-    link: "https://github.com/nerdyfitzy/purpl-ipc-rewrite",
-    description:
-      "An earlier version of the purpl project with the same ideas as the later version. Built in a completely different framework with different technologies, it carried only a few of the features that the later version of purpl did.",
-    builtWith: ["html", "css", "js", "jquery"],
-  },
-  {
-    name: "Anonymous Messager",
+    name: "Druggedfoxd",
     link: "https://github.com/nerdyfitzy/cisc-3300-project",
     description:
-      "A project where users could asynchronously and anonymously send messages which would be stored in an SQL database. A websocket based app, it was built as an example of how to use websockets on both the client and server sides.",
-    builtWith: ["react", "js", "tailwind", "mysql"],
+      "A publicly available project to organize and filter through over 750 Druggedfox lessons. Includes user authentication and bookmarking features to make finding videos easier.",
+    builtWith: ["nextjs", "ts", "tailwind", "mysql"],
   },
 ];
 
@@ -35,12 +28,7 @@ function ProjectsList() {
         </h2>
         <div className='flex flex-row justify-around'>
           {projects.map((proj) => (
-            <Project
-              name={proj.name}
-              description={proj.description}
-              link={proj.link}
-              builtWith={proj.builtWith}
-            />
+            <Project {...proj} />
           ))}
         </div>
       </div>

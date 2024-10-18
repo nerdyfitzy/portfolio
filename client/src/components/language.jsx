@@ -1,6 +1,6 @@
 import React from "react";
 import js from "../images/js.svg";
-import ts from "../images/ts-logo-round-128.svg";
+import ts from "../images/ts.svg";
 import mysql from "../images/mysql.svg";
 import html from "../images/html.svg";
 import css from "../images/css.svg";
