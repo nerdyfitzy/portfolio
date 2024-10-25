@@ -11,7 +11,7 @@ const projects = [
   },
   {
     name: "Druggedfoxd",
-    link: "https://github.com/nerdyfitzy/cisc-3300-project",
+    link: "https://github.com/nerdyfitzy/druggedfoxd",
     description:
       "A publicly available project to organize and filter through over 750 Druggedfox lessons. Includes user authentication and bookmarking features to make finding videos easier.",
     builtWith: ["nextjs", "ts", "tailwind", "mysql"],
